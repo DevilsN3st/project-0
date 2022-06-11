@@ -34,12 +34,12 @@ function Navbar() {
 
   return (
     <AppBar className={classes.appBar} position="static" color="inherit">
-      <div className={classes.brandContainer}>
+      <Link to="/" className={classes.brandContainer}>
         <Typography className={classes.heading} variant="h2" align="center">
           Memories
         </Typography>
         <img className={classes.image} src={memories} alt="icon" height="60" />
-      </div>
+      </Link>
       <Toolbar className={classes.toolbar}>
         {user ? (
           <div className={classes.profile}>
