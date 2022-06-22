@@ -5,7 +5,7 @@ import { useDispatch } from "react-redux";
 import decode from "jwt-decode"
 
 import useStyles from "./styles";
-import memories from "../../images/memories.png";
+import SocialClap from "../../images/SocialClap.png";
 import { LOGOUT } from "../../constants/actionTypes";
 
 function Navbar() {
@@ -35,10 +35,10 @@ function Navbar() {
   return (
     <AppBar className={classes.appBar} position="static" color="inherit">
       <Link to="/" className={classes.brandContainer}>
+        <img className={classes.image} src={SocialClap} alt="icon" height="60" />
         <Typography className={classes.heading} variant="h2" align="center">
-          Memories
+          Social Clap
         </Typography>
-        <img className={classes.image} src={memories} alt="icon" height="60" />
       </Link>
       <Toolbar className={classes.toolbar}>
         {user ? (

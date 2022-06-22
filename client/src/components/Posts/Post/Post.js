@@ -58,7 +58,7 @@ const Post = ({ post, setCurrentId }) => {
 
   return (
     <Card className={classes.card} raised elevation={6}>
-      <ButtonBase className={classes.cardAction} onClick={openPost}>
+      
         <CardMedia
           className={classes.media}
           image={
@@ -75,7 +75,7 @@ const Post = ({ post, setCurrentId }) => {
         </div>
         {(user?.result?.googleId === post?.creator ||
           user?.result?._id === post?.creator) && (
-          <div className={classes.overlay2}>
+            <div className={classes.overlay2}>
             <Button
               style={{ color: "white" }}
               size="small"
@@ -85,6 +85,7 @@ const Post = ({ post, setCurrentId }) => {
             </Button>
           </div>
         )}
+        <ButtonBase className={classes.cardAction} onClick={openPost}>
         <div className={classes.details}>
           <Typography variant="body2" color="textSecondary" component="h2">
             {post.tags.map((tag) => `#${tag} `)}

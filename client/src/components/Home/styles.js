@@ -17,4 +17,7 @@ export default makeStyles((theme) => ({
       flexDirection: 'column-reverse',
     },
   },
+  searchButton: {
+    backgroundColor: '#00a6a0',
+  }
 }));
