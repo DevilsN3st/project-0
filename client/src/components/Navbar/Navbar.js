@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link, useHistory, useLocation } from "react-router-dom";
 import { AppBar, Avatar, Button, Toolbar, Typography } from "@material-ui/core";
 import { useDispatch } from "react-redux";
-import decode from "jwt-decode"
+import decode from "jwt-decode";
 
 import useStyles from "./styles";
 import SocialClap from "../../images/SocialClap.png";
@@ -25,9 +25,9 @@ function Navbar() {
 
   useEffect(() => {
     const token = user?.token;
-    if( token ){
+    if (token) {
       const decodedToken = decode(token);
-      if(decodedToken.exp * 1000 < new Date().getTime()) logout();
+      if (decodedToken.exp * 1000 < new Date().getTime()) logout();
     }
     setUser(JSON.parse(localStorage.getItem("profile")));
   }, [location]);
@@ -35,7 +35,12 @@ function Navbar() {
   return (
     <AppBar className={classes.appBar} position="static" color="inherit">
       <Link to="/" className={classes.brandContainer}>
-        <img className={classes.image} src={SocialClap} alt="icon" height="60" />
+        <img
+          className={classes.image}
+          src={SocialClap}
+          alt="icon"
+          height="60"
+        />
         <Typography className={classes.heading} variant="h2" align="center">
           Social Clap
         </Typography>
@@ -65,7 +70,7 @@ function Navbar() {
         ) : (
           <Button
             component={Link}
-            to="/auth"
+            to={'/auth'}
             variant="contained"
             color="primary"
           >
