@@ -52,7 +52,7 @@ function Auth() {
 
   const googleSuccess = async (res) => {
     const result = res?.profileObj;
-    const token = res?.tokeId;
+    const token = res?.tokenId;
     try {
       dispatch({ type: "AUTH", data: { result, token } });
       history.push("/");
